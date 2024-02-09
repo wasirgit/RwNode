@@ -2,6 +2,7 @@
 const http = require('http');
 const { handleReqRes } = require('./helper/handleReqRes');
 const envSettings = require('./helper/envSettings');
+const data = require('./lib/data');
 
 // app object
 
