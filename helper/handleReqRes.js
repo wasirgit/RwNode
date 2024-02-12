@@ -25,13 +25,13 @@ handler.handleReqRes = (req, res) => {
         queryStringObject,
         headerObject,
     };
-    console.log(`Request path: ${decoratedPath} Method: ${method} `);
-    console.log(`${routes[decoratedPath]}`)
+    console.log(`Request path: ${decoratedPath} Method: ${method} ${headerObject}`);
+
     const respectiveHandler = routes[decoratedPath] ? routes[decoratedPath] : notFoundHandler;
     let realData = '';
     req.on('data', (buffer) => {
         realData += decoder.write(buffer);
-    });
+    });  
     req.on('end', () => {
         realData += decoder.end();
         requestedProperties.body = utilities.parseJSON(realData);

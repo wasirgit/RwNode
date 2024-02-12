@@ -1,6 +1,6 @@
 const handler = {};
 
-handler.notFoundHandler = (requestProperties, callback) => {
+handler.notFoundHandler = (requestedProperties, callback) => {
     callback(404, {
         message: 'Your requested URL was not found',
     });
