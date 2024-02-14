@@ -156,9 +156,9 @@ handler.users.put = (requestedProperties, callback) => {
               if (password) {
                 userData.password = hash(password);
               }
-
+    
               // now update database with latest data
-
+    
               data.update("users", phone, userData, (error) => {
                 if (!error) {
                   callback(200, { message: "User update succesfully" });
@@ -171,8 +171,7 @@ handler.users.put = (requestedProperties, callback) => {
               });
             } else {
               callback(400, {
-                error:
-                  "Invalid request. Please double check your request param!",
+                error: "Invalid request. Please double check your request param!",
               });
             }
           });
@@ -182,6 +181,8 @@ handler.users.put = (requestedProperties, callback) => {
           });
         }
       });
+
+    
     } else {
       callback(400, { error: "Invalid request. Please try again!" });
     }
